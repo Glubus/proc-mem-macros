@@ -1,0 +1,20 @@
+# Structural complexity limits — enforced as hard errors via `just clippy`.
+# These thresholds are deliberately tight to keep every function auditable
+# at a glance and to discourage monolithic code paths in proc-macro logic.
+
+# Maximum number of lines in a function body.
+# 40 lines is enough for any well-decomposed proc-macro helper.
+too-many-lines-threshold = 40
+
+# Maximum number of parameters in a function signature.
+# If you need more, introduce a builder or a config struct.
+too-many-arguments-threshold = 5
+
+# Maximum cyclomatic complexity before clippy complains.
+cognitive-complexity-threshold = 10
+
+# Warn at 2+ nested levels of boolean operators in a single expression.
+max-trait-bounds = 3
+
+# Keep match arms readable.
+single-char-binding-names-threshold = 2

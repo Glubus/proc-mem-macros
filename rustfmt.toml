@@ -1,0 +1,53 @@
+edition = "2024"
+
+# ── Line width ────────────────────────────────────────────────────────────────
+max_width            = 100
+comment_width        = 80
+wrap_comments        = true
+format_code_in_doc_comments = true
+
+# ── Indentation ───────────────────────────────────────────────────────────────
+hard_tabs  = false
+tab_spaces = 4
+
+# ── Heuristics — all disabled, explicit per-category limits instead ───────────
+use_small_heuristics  = "Off"
+fn_call_width         = 80   # keep call sites readable
+attr_fn_like_width    = 70
+struct_lit_width      = 0    # always vertical for struct literals
+struct_variant_width  = 0    # same for enum variants
+array_width           = 60
+chain_width           = 60
+single_line_if_else_max_width = 0  # always use block form
+
+# ── Trailing punctuation ──────────────────────────────────────────────────────
+trailing_comma             = "Always"
+trailing_semicolon         = true
+match_block_trailing_comma = true
+
+# ── Imports ───────────────────────────────────────────────────────────────────
+reorder_imports         = true
+reorder_modules         = true
+imports_granularity     = "Module"   # group by module, not by item
+group_imports           = "StdExternalCrate"
+
+# ── Syntax sugar ──────────────────────────────────────────────────────────────
+use_try_shorthand         = true
+use_field_init_shorthand  = true
+merge_derives             = true
+force_explicit_abi        = true
+
+# ── Misc style ────────────────────────────────────────────────────────────────
+newline_style                = "Unix"
+normalize_comments           = true
+normalize_doc_attributes     = true
+fn_single_line               = false   # never collapse fn bodies to one line
+where_single_line            = false   # where clauses always get their own line
+match_arm_blocks             = true
+struct_field_align_threshold = 0       # no column alignment (masks diffs)
+enum_discrim_align_threshold = 0
+
+# ── Nightly (requires `cargo +nightly fmt`) ───────────────────────────────────
+unstable_features  = true
+format_strings     = false  # string formatting is fragile, leave it alone
+overflow_delimited_expr = false
